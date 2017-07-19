@@ -2,3 +2,85 @@
  * Custom code goes here.
  * A template should always ship with an empty custom.css
  */
+
+header#header {
+    background-color: #fff;
+}
+
+#header .header-nav, #header .header-nav .blockcart  {
+    background-color: #313131;
+}
+
+@media (max-width: 767px) {
+    header#header .header-nav {
+        background-color: #313131;
+        color: #acaaa6;
+    }
+
+    .footer-container .links .h3 {
+        color: #acaaa6;
+    }
+
+    #footer .block_newsletter {
+        border-bottom: none;
+    }
+
+    #footer {
+        padding: 0 20px;
+    }
+
+    #footer .links {
+        margin-left: 10px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .featured-products .all-product-link {
+        margin-left: 38%;
+    }
+}
+
+.search-widget form input[type=text] {
+    outline: 2px solid #e2e2e2;
+}
+
+.search-widget form input[type=text]:focus {
+    outline: 2px solid #afafaf;
+}
+
+#header .header-nav {
+    border-bottom: none;
+}
+
+#header .header-nav a {
+    color: #acaaa6;
+}
+section#wrapper {
+    background: #fff;
+}
+
+footer#footer {
+    background-color: #313131;
+}
+
+footer#footer h4, footer#footer h3, #block_myaccount_infos .myaccount-title a {
+    color: #acaaa6;
+}
+
+footer input.btn-primary {
+    background-color: #77878a;
+}
+
+footer .footer-container {
+    padding-top: 0;
+}
+
+.block_newsletter form input[type=text]:focus {
+    border: solid 2px #77878a;
+}
+
+h1.products-section-title.text-uppercase {
+    display: none;
+}
