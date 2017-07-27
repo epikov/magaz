@@ -11,9 +11,25 @@ header#header {
     background-color: #313131;
 }
 
+@media (min-width: 768px) {
+    .col-md-2 {
+        width: 50%;
+    }
+
+    .search-widget {
+        position: absolute;
+        top: 20%;
+        right: 0;
+    }
+}
+
 @media (max-width: 767px) {
+    #header .header-top {
+        background-color: #fff;
+    }
+
     header#header .header-nav {
-        background-color: #313131;
+        background-color: #fff;
         color: #acaaa6;
     }
 
@@ -34,16 +50,30 @@ header#header {
     }
 
     .container {
-        padding: 0;
+        padding: 0 5px;
     }
 
     .featured-products .all-product-link {
         margin-left: 38%;
     }
+
+    .search-widget form input[type=text] {
+        outline: 1px solid #e8e8e8;
+    }
+
+    .header-top .search-widget {
+        padding: 0 15px;
+    }
+
+    .products-sort-order .select-title {
+        width: 270px;
+        border: 1px solid #e8e8e8;
+    }
 }
 
 .search-widget form input[type=text] {
     outline: 2px solid #e2e2e2;
+    background: #fff;
 }
 
 .search-widget form input[type=text]:focus {
