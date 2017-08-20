@@ -14,8 +14,14 @@ header#header {
 #header .header-nav .cart-preview.active {
     background-color: #f5b2a4;
 }
-#header a, #header a:hover, #header .dropdown {
+#header a, #header a:hover {
     color: #fff;
+}
+#header .dropdown-item.dropdown-submenu {
+    color: #000;
+}
+#header a.dropdown-item {
+    color: #414141;
 }
 #header .header-top .position-static {
     margin:  20px 0 0;
@@ -29,7 +35,10 @@ body#checkout #header .header-nav a {
     color: #414141;
     cursor: pointer;
 }
-#products .thumbnail-container:hover .highlighted-informations, .featured-products .thumbnail-container:hover .highlighted-informations, .product-accessories .thumbnail-container:hover .highlighted-informations, .product-miniature .thumbnail-container:hover .highlighted-informations {
+#products .thumbnail-container:hover .highlighted-informations,
+.featured-products .thumbnail-container:hover .highlighted-informations,
+.product-accessories .thumbnail-container:hover .highlighted-informations,
+.product-miniature .thumbnail-container:hover .highlighted-informations {
     bottom: 1.25rem;
 }
 .btn-primary {
@@ -48,9 +57,7 @@ body#checkout #header .header-nav a {
 .form-control:focus, .input-group.focus {
     outline: 1px solid rgba(0,0,0,.15);
 }
-form.forgotten-password .form-control-submit.btn-primary {
 
-}
 @media (min-width: 768px) {
     .col-md-2 {
         width: 50%;
