@@ -41,6 +41,32 @@ body#checkout #header .header-nav a {
 .product-miniature .thumbnail-container:hover .highlighted-informations {
     bottom: 1.25rem;
 }
+#products .thumbnail-container,
+.featured-products .thumbnail-container,
+.product-accessories .thumbnail-container,
+.product-miniature .thumbnail-container {
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,.15);
+    overflow: hidden;
+}
+#products .thumbnail-container:hover,
+.featured-products .thumbnail-container:hover,
+.product-accessories .thumbnail-container:hover,
+.product-miniature .thumbnail-container:hover {
+    outline: 2px solid rgba(0,0,0,.15);
+}
+#products .highlighted-informations,
+.featured-products .highlighted-informations,
+.product-accessories .highlighted-informations,
+.product-miniature .highlighted-informations {
+    box-shadow: none;
+}
+#products .thumbnail-container:hover .product-description,
+.featured-products .thumbnail-container:hover .product-description,
+.product-accessories .thumbnail-container:hover .product-description,
+.product-miniature .thumbnail-container:hover .product-description {
+    box-shadow: none;
+}
 .btn-primary {
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.15);
