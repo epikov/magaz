@@ -434,7 +434,7 @@ File: themes/starterTheme/templates/customer/order-follow.tpl:30</note>
     <body>
       <trans-unit id="733ae3eecadd5777cea5ce9a32379d7a" approved="yes">
         <source>Send reset link</source>
-        <target xml:lang="ru">Отправить ссылку восстановления пароля</target>
+        <target xml:lang="ru">Отправить</target>
         <note>Context:
 File: themes/starterTheme/templates/customer/password-email.tpl:32</note>
       </trans-unit>

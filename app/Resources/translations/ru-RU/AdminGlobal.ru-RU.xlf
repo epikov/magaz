@@ -888,7 +888,7 @@ File: controllers/admin/AdminShopController.php:538</note>
     <body>
       <trans-unit id="5e74f2daf4ae8030571ceee5b4837579" approved="yes">
         <source>Social title</source>
-        <target xml:lang="ru">Форма обращения</target>
+        <target xml:lang="ru">Пол</target>
         <note>Context:
 File: controllers/admin/AdminSearchController.php:291</note>
       </trans-unit>
