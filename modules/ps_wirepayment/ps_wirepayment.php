@@ -188,10 +188,6 @@ class Ps_Wirepayment extends PaymentModule
             return;
         }
 
-        $this->smarty->assign(
-            $this->getTemplateVarInfos()
-        );
-
         $newOption = new PaymentOption();
         $newOption->setModuleName($this->name)
                 ->setCallToActionText($this->trans('Pay by bank wire', array(), 'Modules.Wirepayment.Shop'))
@@ -206,59 +202,7 @@ class Ps_Wirepayment extends PaymentModule
 
     public function hookPaymentReturn($params)
     {
-        if (!$this->active || !Configuration::get(self::FLAG_DISPLAY_PAYMENT_INVITE)) {
-            return;
-        }
 
-        $state = $params['order']->getCurrentState();
-        if (
-            in_array(
-                $state,
-                array(
-                    Configuration::get('PS_OS_BANKWIRE'),
-                    Configuration::get('PS_OS_OUTOFSTOCK'),
-                    Configuration::get('PS_OS_OUTOFSTOCK_UNPAID'),
-                )
-        )) {
-            $bankwireOwner = $this->owner;
-            if (!$bankwireOwner) {
-                $bankwireOwner = '___________';
-            }
-
-            $bankwireDetails = Tools::nl2br($this->details);
-            if (!$bankwireDetails) {
-                $bankwireDetails = '___________';
-            }
-
-            $bankwireAddress = Tools::nl2br($this->address);
-            if (!$bankwireAddress) {
-                $bankwireAddress = '___________';
-            }
-
-            $this->smarty->assign(array(
-                'shop_name' => $this->context->shop->name,
-                'total' => Tools::displayPrice(
-                    $params['order']->getOrdersTotalPaid(),
-                    new Currency($params['order']->id_currency),
-                    false
-                ),
-                'bankwireDetails' => $bankwireDetails,
-                'bankwireAddress' => $bankwireAddress,
-                'bankwireOwner' => $bankwireOwner,
-                'status' => 'ok',
-                'reference' => $params['order']->reference,
-                'contact_url' => $this->context->link->getPageLink('contact', true)
-            ));
-        } else {
-            $this->smarty->assign(
-                array(
-                    'status' => 'failed',
-                    'contact_url' => $this->context->link->getPageLink('contact', true),
-                )
-            );
-        }
-
-        return $this->fetch('module:ps_wirepayment/views/templates/hook/payment_return.tpl');
     }
 
     public function checkCurrency($cart)
@@ -397,49 +341,6 @@ class Ps_Wirepayment extends PaymentModule
             'BANK_WIRE_CUSTOM_TEXT' => $custom_text,
             self::FLAG_DISPLAY_PAYMENT_INVITE => Tools::getValue(self::FLAG_DISPLAY_PAYMENT_INVITE,
                 Configuration::get(self::FLAG_DISPLAY_PAYMENT_INVITE))
-        );
-    }
-
-    public function getTemplateVarInfos()
-    {
-        $cart = $this->context->cart;
-        $total = sprintf(
-            $this->trans('%1$s (tax incl.)', array(), 'Modules.Wirepayment.Shop'),
-            Tools::displayPrice($cart->getOrderTotal(true, Cart::BOTH))
-        );
-
-         $bankwireOwner = $this->owner;
-        if (!$bankwireOwner) {
-            $bankwireOwner = '___________';
-        }
-
-        $bankwireDetails = Tools::nl2br($this->details);
-        if (!$bankwireDetails) {
-            $bankwireDetails = '___________';
-        }
-
-        $bankwireAddress = Tools::nl2br($this->address);
-        if (!$bankwireAddress) {
-            $bankwireAddress = '___________';
-        }
-
-        $bankwireReservationDays = Configuration::get('BANK_WIRE_RESERVATION_DAYS');
-        if (false === $bankwireReservationDays) {
-            $bankwireReservationDays = 7;
-        }
-
-        $bankwireCustomText = Tools::nl2br(Configuration::get('BANK_WIRE_CUSTOM_TEXT', $this->context->language->id));
-        if (false === $bankwireCustomText) {
-            $bankwireCustomText = '';
-        }
-
-        return array(
-            'total' => $total,
-            'bankwireDetails' => $bankwireDetails,
-            'bankwireAddress' => $bankwireAddress,
-            'bankwireOwner' => $bankwireOwner,
-            'bankwireReservationDays' => (int)$bankwireReservationDays,
-            'bankwireCustomText' => $bankwireCustomText,
         );
     }
 }
