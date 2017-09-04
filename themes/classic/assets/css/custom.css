@@ -87,6 +87,12 @@ body#checkout #header .header-nav a {
     outline: 1px solid rgba(0,0,0,.15);
 }
 
+.product-variants>.product-variants-item select {
+    min-width: 3.75rem;
+    background-color: #fff;
+    width: inherit;
+}
+
 @media (min-width: 768px) {
     .col-md-2 {
         width: 50%;
