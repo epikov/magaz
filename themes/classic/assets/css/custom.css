@@ -241,76 +241,70 @@ h1.products-section-title.text-uppercase {
     display: none;
 }
 .shop-top-page-menu *, .shop-top-page-menu *:before, .shop-top-page-menu *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
 #header .shop-top-page-menu a,
 #header .shop-top-page-menu a:hover {
-    color: #acaaa6;
-}
-.shop-top-page-menu {
-    width: 100%;
-    background: #fff;
-    z-index: 999;
-    position: relative;
+    color: #222;
 }
 .shop-top-page-menu ul {
-    list-style: none;
-    float: left;
-    margin-right: 100px;
-    display: inline-table;
+    font-family: 'Lato', sans-serif;
+    z-index: 10;
 }
-.shop-top-page-menu ul li {
+.shop-top-page-menu li > ul {
+    z-index: 11;
+    background-color: #fff;
     white-space: nowrap;
-    float: left;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: -3px 3px 10px -2px rgba(0, 0, 0, .1);
+}
+.shop-top-page-menu li {
+    position: relative;
+    display: inline-block;
+    list-style: none;
     transition: all .2s ease-in-out;
-}
-.shop-top-page-menu ul li:hover {
-    background: rgba(0, 0, 0, .15);
-}
-
-.shop-top-page-menu ul li:hover > ul {
-    display: block;
-}
-.shop-top-page-menu ul li {
     float: left;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
 }
-.shop-top-page-menu ul li a {
+.shop-top-page-menu li > ul li {
+    float: none;
+}
+.shop-top-page-menu li:hover {
+    background: rgba(0,0,0,.15);
+}
+.shop-top-page-menu li a {
     display: block;
-    padding: 30px 20px;
-    color: #acaaa6;
-    font-size: .9em;
-    letter-spacing: 1px;
+    padding: 1em 1.5em;
+    color: #222;
     text-decoration: none;
+    transition: background .2s;
     text-transform: uppercase;
+    font-size: .9em;
+}
+.shop-top-page-menu li ul li a {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+/*dropdown menu styles*/
+/*first level*/
+.shop-top-page-menu ul li:hover > ul {
+    left: 0;
 }
 .shop-top-page-menu ul ul {
-    display: none;
-    background: #fff;
     position: absolute;
     top: 100%;
-    box-shadow: -3px 3px 10px -2px rgba(0, 0, 0, .1);
-    border: 1px solid rgba(0, 0, 0, .1);
+    left: -9999em;
 }
 .shop-top-page-menu ul ul li {
-    float: none;
     position: relative;
+    display: block;
 }
-.shop-top-page-menu ul ul li a {
-    padding: 15px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
+/*second level*/
+.shop-top-page-menu ul ul li:hover > ul {
+    left: 100%;
 }
 .shop-top-page-menu ul ul ul {
     position: absolute;
-    left: 100%;
+    left: -9999em;
     top: 0;
 }

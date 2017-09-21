@@ -38,7 +38,7 @@
         <ul data-depth="{$depth}">
             {foreach from=$nodes item=node}
                 <li>
-                    <a href="{$node.url}" data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
+                    <a href="{$node.url}" {if $node.open_in_new_window} target="_blank" {/if}>
                         {$node.label}
                     </a>
                     {if $node.children|count}
