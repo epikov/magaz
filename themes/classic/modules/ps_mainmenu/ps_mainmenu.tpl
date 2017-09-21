@@ -1,5 +1,5 @@
 {assign var=_counter value=0}
-{function name="menu" nodes=[] depth=0 parent=null}
+{function name="menuMobile" nodes=[] depth=0 parent=null}
     {if $nodes|count}
       <ul class="top-menu" {if $depth == 0}id="top-menu"{/if} data-depth="{$depth}">
         {foreach from=$nodes item=node}
@@ -24,7 +24,7 @@
               </a>
               {if $node.children|count}
               <div {if $depth === 0} class="popover sub-menu js-sub-menu collapse"{else} class="collapse"{/if} id="top_sub_menu_{$_expand_id}">
-                {menu nodes=$node.children depth=$node.depth parent=$node}
+                {menuMobile nodes=$node.children depth=$node.depth parent=$node}
               </div>
               {/if}
             </li>
@@ -33,7 +33,29 @@
     {/if}
 {/function}
 
-<div class="menu col-lg-8 col-md-7 js-top-menu position-static hidden-sm-down" id="_desktop_top_menu">
+{function name="menu" nodes=[] depth=0 parent=null}
+    {if $nodes|count}
+        <ul data-depth="{$depth}">
+            {foreach from=$nodes item=node}
+                <li>
+                    <a href="{$node.url}" data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
+                        {$node.label}
+                    </a>
+                    {if $node.children|count}
+                        {menu nodes=$node.children depth=$node.depth parent=$node}
+                    {/if}
+                </li>
+            {/foreach}
+        </ul>
+    {/if}
+{/function}
+
+<div class="mobile-shop-top-page-menu menu col-lg-8 col-md-7 js-top-menu position-static hidden-sm-down" id="_desktop_top_menu">
+    {menuMobile nodes=$menu.children}
+    <div class="clearfix"></div>
+</div>
+
+<div class="shop-top-page-menu">
     {menu nodes=$menu.children}
     <div class="clearfix"></div>
 </div>

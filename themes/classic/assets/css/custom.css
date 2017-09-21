@@ -11,6 +11,12 @@ header#header {
     background-color: #f5b2a4;
     color: #fff;
 }
+#header .header-nav #menu-icon .material-icons {
+    color: #000;
+}
+#mobile_top_menu_wrapper {
+    padding: 10px;
+}
 #header .header-nav .cart-preview.active {
     background-color: #f5b2a4;
 }
@@ -100,7 +106,7 @@ body#checkout #header .header-nav a {
 
     header#header .search-widget {
         position: absolute;
-        top: 20%;
+        top: -22px;
         right: 0;
     }
 }
@@ -216,71 +222,95 @@ h1.products-section-title.text-uppercase {
 }
 
 /*!* Menu *!*/
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@media (max-width: 767px) {
+    .mobile-shop-top-page-menu {
+        display: block;
+    }
 
-/*#header .header-top .menu, #header .header-top .menu:before, #header .header-top .menu:after{*/
-    /*-webkit-box-sizing: border-box;*/
-    /*-moz-box-sizing: border-box;*/
-    /*box-sizing: border-box;*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
+    .shop-top-page-menu {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .shop-top-page-menu {
+        display: block;
+    }
+}
+.mobile-shop-top-page-menu {
+    display: none;
+}
+.shop-top-page-menu *, .shop-top-page-menu *:before, .shop-top-page-menu *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+#header .shop-top-page-menu a,
+#header .shop-top-page-menu a:hover {
+    color: #acaaa6;
+}
+.shop-top-page-menu {
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    position: relative;
+}
+.shop-top-page-menu ul {
+    list-style: none;
+    float: left;
+    margin-right: 100px;
+    display: inline-table;
+}
+.shop-top-page-menu ul li {
+    white-space: nowrap;
+    float: left;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.shop-top-page-menu ul li:hover {
+    background: rgba(0, 0, 0, .15);
+}
 
-/*#header .header-top .menu {*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*background: #fff;*/
-    /*box-shadow: 0 3px 10px -2px rgba(0,0,0,.1);*/
-    /*border: 1px solid rgba(0,0,0,.1);*/
-/*}*/
-
-/*#header .header-top .menu ul{*/
-    /*list-style: none;*/
-    /*position: relative;*/
-    /*float: right;*/
-    /*margin-right: 100px;*/
-    /*display: inline-table;*/
-/*}*/
-/*#header .header-top .menu ul li{*/
-    /*float: left;*/
-    /*-webkit-transition: all .2s ease-in-out;*/
-    /*-moz-transition: all .2s ease-in-out;*/
-    /*transition: all .2s ease-in-out;*/
-/*}*/
-
-/*#header .header-top .menu ul li:hover{background: rgba(0,0,0,.15);}*/
-/*#header .header-top .menu ul li:hover > ul{display: block;}*/
-/*#header .header-top .menu ul li{*/
-    /*float: left;*/
-    /*-webkit-transition: all .2s ease-in-out;*/
-    /*-moz-transition: all .2s ease-in-out;*/
-    /*transition: all .2s ease-in-out;*/
-/*}*/
-/*#header .header-top .menu ul li a{*/
-    /*display: block;*/
-    /*padding: 30px 20px;*/
-    /*color: #222;*/
-    /*font-size: .9em;*/
-    /*letter-spacing: 1px;*/
-    /*text-decoration: none;*/
-    /*text-transform: uppercase;*/
-/*}*/
-/*#header .header-top .menu ul ul{*/
-    /*display: none;*/
-    /*background: #fff;*/
-    /*position: absolute;*/
-    /*top: 100%;*/
-    /*box-shadow: -3px 3px 10px -2px rgba(0,0,0,.1);*/
-    /*border: 1px solid rgba(0,0,0,.1);*/
-/*}*/
-/*#header .header-top .menu ul ul li{float: none; position: relative;}*/
-/*#header .header-top .menu ul ul li a {*/
-    /*padding: 15px 30px;*/
-    /*border-bottom: 1px solid rgba(0,0,0,.05);*/
-/*}*/
-/*#header .header-top .menu ul ul ul {*/
-    /*position: absolute;*/
-    /*left: 100%;*/
-    /*top:0;*/
-/*}*/
+.shop-top-page-menu ul li:hover > ul {
+    display: block;
+}
+.shop-top-page-menu ul li {
+    float: left;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.shop-top-page-menu ul li a {
+    display: block;
+    padding: 30px 20px;
+    color: #acaaa6;
+    font-size: .9em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.shop-top-page-menu ul ul {
+    display: none;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    box-shadow: -3px 3px 10px -2px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+.shop-top-page-menu ul ul li {
+    float: none;
+    position: relative;
+}
+.shop-top-page-menu ul ul li a {
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+.shop-top-page-menu ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
