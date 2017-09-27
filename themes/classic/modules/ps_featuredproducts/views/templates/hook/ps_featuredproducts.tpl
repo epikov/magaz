@@ -31,7 +31,9 @@
       {include file="catalog/_partials/miniatures/product.tpl" product=$product}
     {/foreach}
   </div>
-  <a class="all-product-link pull-xs-left pull-md-right h4" href="{$allProductsLink}">
-    {l s='All products' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
-  </a>
+  <div class="recommended-products-link-all">
+    <a class="all-product-link pull-xs-left pull-md-right h4" href="{$allProductsLink}">
+        {l s='All products' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
+    </a>
+  </div>
 </section>
