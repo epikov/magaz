@@ -106,7 +106,10 @@ body#checkout #header .header-nav a {
     max-height: 450px;
     height: auto;
 }
-
+body.page-index section#wrapper {
+    padding-top: 0;
+    box-shadow: none;
+}
 section.featured-products.clearfix {
     width: 90%;
     margin: 0 auto;
