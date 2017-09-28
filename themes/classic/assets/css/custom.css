@@ -199,6 +199,9 @@ div.row.products-selection .col-md-6.hidden-sm-down.total-products {
     width: 40%;
 }
 @media (min-width: 768px) {
+    header#header .col-md-2.hidden-sm-down {
+        width: 58%;
+    }
     .col-md-2 {
         width: 30%;
     }
@@ -254,7 +257,7 @@ div.row.products-selection .col-md-6.hidden-sm-down.total-products {
     }
 
     .header-top .search-widget {
-        padding: 0 15px;
+        padding: 0 15px 17px;
     }
 
     .products-sort-order .select-title {
